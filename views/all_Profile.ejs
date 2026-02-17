@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Table</title>
+  <link rel="stylesheet" href="/appProfile.css">
+</head>
+<body>
+
+  <div class="table-container">
+    
+
+    <table>
+      <thead id="tb_head">
+        <tr>
+          <th>Sr.No</th>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Followers</th>
+          <th>Following</th>
+          <th>Account</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% result.forEach((data,srn=1)=>{%>
+                  <tr>
+                    <td><%= srn+1 %></td>
+                    <td><%= data.id %></td>
+                    <td><%= data.username %></td>
+                    <td><%= data.fullName %></td>
+                    <td><%= data.email %></td>
+                    <td><%= data.follower %></td>
+                    <td><%= data.following %></td>
+                    <td><a href="/profile/<%= data.id %>">Show</a></td>
+                    
+                    
+                  </tr>
+           <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

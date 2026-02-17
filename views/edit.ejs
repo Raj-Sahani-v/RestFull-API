@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<style>
+    body {
+      font-family: Arial;
+      background: #f4f6f9;
+    }
+
+    .form-box {
+      width: 400px;
+      margin: 50px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+<body>
+ 
+
+<div class="form-box">
+  <h2>Edit Account</h2>
+
+  <form action="/profile/<%=id %>?_method=PATCH" method="POST">
+    <input type="text" name="fullname" value="<%= result[0].fullname %>"
+        placeholder="New Name"required>
+
+    <input type="text" name="username" value="<%= result[0].username %>"
+        placeholder="New username" required>
+
+    <button type="submit">Update</button>
+  </form>
+</div>
+
+</body>
+</html>

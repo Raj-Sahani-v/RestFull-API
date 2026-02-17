@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Profile Clone</title>
+    <link rel="stylesheet" href="/hello.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="profile-container">
+
+        
+        <div class="profile-header">
+            <div class="profile-img">
+                <img src="https://static.vecteezy.com/system/resources/previews/032/176/197/non_2x/business-avatar-profile-black-icon-man-of-user-symbol-in-trendy-flat-style-isolated-on-male-profile-people-diverse-face-for-social-network-or-web-vector.jpg" alt="profile">
+            </div>
+
+            <div class="profile-info">
+                <div class="top-row">
+                    <%if(user_check){%>
+                    <h1> <%=  user_check.username%></h2>
+                    <%}%>
+                    <br>
+                    
+                    <button class="message-btn">Message</button>
+                </div>
+                <div>
+                    <br>
+                    <h3 id="email"><i class="fa-regular fa-envelope"></i><%= user_check.email %></h3>
+                    <br>
+                </div>
+                <div class="stats">
+                    
+                    <span><a href="<%= user_check.id %>/edit"><i class="fa-regular fa-pen-to-square"></i>edit</a></span>
+                
+                    <form  action="/profile/<%= user_check.id %>?_method=DELETE" method="post">
+                        <button id="button"> <i class="fa-solid fa-trash-can"></i>Delete Account</button>
+                    </form>
+                </div>
+
+                <div class="bio">
+                    
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2><a href=""><b>Post Upload</b></a></h2>
+        <!-- Post  -->
+        <div id="post-grid">
+
+            
+
+        </div>
+        
+
+    </div>
+
+</body>
+</html>
